@@ -78,6 +78,7 @@ public class _MainTest extends TestCase {
 		for (int i = 1; i <= 2; i++) { // # to change
 			for (int j = 0; j <= tupler.length - i; j++) { //looping through all values
 				array = new int[tupler.length];
+				//TODO: testa två värden som inte är bredvid varandra
 				for (int f = 0; f < j; f++) { //Not changing values
 					array[f] = tupler[f][0];
 				}
