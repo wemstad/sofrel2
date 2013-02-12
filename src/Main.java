@@ -57,11 +57,13 @@ public class Main {
 
 	public int BinarySearch(int[] A, int key) {
 		int x;
-		int l = 0; //Mutation 4: l = 1 should be l=0;
+		int l = 0; // Mutation 4: l = 1 should be l=0;
 		int r = A.length - 1;
-		
-		if (A.length == 0 || key < A[l] || key > A[r]) { 
-			return 0;
+
+		if (A.length == 0 || key < A[l] || key > A[r]) { // Array is empty or
+															// key is above or
+			return 0;										// below the array,
+															// return not found
 		}
 		do {
 			x = (l + r) / 2;
@@ -70,7 +72,7 @@ public class Main {
 			} else {
 				l = x + 1;
 			}
-		} while (key != A[x] && l <= r); // Mutation 3: || should be && (last);
+		} while (key != A[x] && l <= r); // Mutation 3: || should be &&;
 
 		if (key == A[x]) {
 			return 1;
@@ -82,13 +84,14 @@ public class Main {
 	public int[] Sort(int[] A) {
 		int tmp;
 
-		for (int i = 1; i < A.length; i++) { //Mutation 2: int i = 0 should be int i = 1
+		for (int i = 1; i < A.length; i++) { // Mutation 2: int i = 0 should be
+												// int i = 1
 			tmp = A[i];
 			int j;
 			for (j = i - 1; (j >= 0) && A[j] > tmp; j--) {
 				A[j + 1] = A[j];
 			}
-			A[j + 1] = tmp;//Mutation 6: A[j] = tmp should be A[j+1] = tmp
+			A[j + 1] = tmp;// Mutation 6: A[j] = tmp should be A[j+1] = tmp
 		}
 
 		return A;
